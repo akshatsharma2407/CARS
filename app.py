@@ -10,6 +10,7 @@ df3 = pd.read_csv("CAR3.CSV")
 df4 = pd.read_csv("CAR4.CSV")
 df = pd.concat([df1,df2,df3,df4],axis=0)
 df.dropna(inplace=True)
+del df1,df2,df3,df4
 
 # Set the page configuration as the very first command
 st.set_page_config(
