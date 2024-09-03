@@ -4,7 +4,11 @@ import numpy as np
 import plotly.express as px
 import json
 
-df = pd.read_csv("CARS.CSV")
+df1 = pd.read_csv("CAR1.CSV")
+df2 = pd.read_csv("CAR2.CSV")
+df3 = pd.read_csv("CAR3.CSV")
+df4 = pd.read_csv("CAR4.CSV")
+df = pd.concat([df1,df2,df3,df4],axis=0)
 df.dropna(inplace=True)
 
 # Set the page configuration as the very first command
