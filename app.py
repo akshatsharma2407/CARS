@@ -1766,7 +1766,7 @@ def search_by_brand(brand,model):
                 'MODEL/CLASS',
                 'PARENT COMPANY',
                 'PRICE RANGE',
-                'STOCK TYPE'])
+                'STOCK TYPE','id'])
 
         corr_matrix = cor_temp.corr()
 
@@ -2708,7 +2708,7 @@ def search_by_category(final_df):
                 'MODEL/CLASS',
                 'PARENT COMPANY',
                 'PRICE RANGE',
-                'STOCK TYPE'])
+                'STOCK TYPE','id'])
 
         corr_matrix = cor_temp.corr()
 
