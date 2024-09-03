@@ -2725,7 +2725,6 @@ def search_by_category(final_df):
 def EDA(df):
     st.title('CRISP OF EDA')
     st.markdown(f'<a href="{'https://colab.research.google.com/drive/1aK0VaLN8RasvfZ3qn8jS22WpO1ohSz-L?usp=sharing'}" target="_blank">Click here to see full EDA file</a>', unsafe_allow_html=True)
-    st.markdown(f'<a href="{'https://colab.research.google.com/drive/1aK0VaLN8RasvfZ3qn8jS22WpO1ohSz-L?usp=sharing'}" target="_blank">Click here to see the life cycle of this entire project</a>', unsafe_allow_html=True)
     st.header('Insights')
     st.write(
         """
@@ -3211,7 +3210,7 @@ This systematic approach to web scraping enabled the creation of a rich dataset 
 
     st.subheader('DOWNLOAD DATASET')
     st.write('You can download the dataset from my kaggle profile.')
-    st.markdown(f'<a href="{'https://colab.research.google.com/drive/1aK0VaLN8RasvfZ3qn8jS22WpO1ohSz-L?usp=sharing'}" target="_blank">DATASET LINK</a>',unsafe_allow_html=True)
+    st.markdown(f'<a href="{'https://www.kaggle.com/datasets/akshatsharma2407/cars-dataset'}" target="_blank">DATASET LINK</a>',unsafe_allow_html=True)
 
 def me():
     st.header('ABOUT ME!')
