@@ -12,32 +12,23 @@ df = pd.concat([df1,df2,df3,df4],axis=0)
 df.dropna(inplace=True)
 del df1,df2,df3,df4
 
-# Set the page configuration as the very first command
 st.set_page_config(
     page_title="Car Trends Dashboard",
-    layout="wide",  # Use the full-width layout
+    layout="wide", 
     initial_sidebar_state="expanded",
 )
 
 def home():
-# Flag for audio state
-    if 'mute' not in st.session_state:
-        st.session_state['mute'] = False  # Start with audio unmuted
-
-    # Header
     st.title('🚗 Car Trends Dashboard')
 
-    # Introduction
     st.write(
         """
         Welcome to the **Car Trends Dashboard**—an innovative platform designed to explore and analyze car trends globally. This tool offers a comprehensive overview of car brands, models, and market dynamics, empowering enthusiasts, analysts, and decision-makers to make informed choices in the automotive industry.
         """
     )
 
-    # Create columns
     col1, col2, col3 = st.columns(3)
 
-    # Content for the first column
     with col1:
         st.subheader('🗺️ Interactive Maps')
         st.write(
@@ -65,10 +56,8 @@ def home():
             """
         )
 
-    # Add vertical space between columns
     st.write("<div style='height: 50px;'></div>", unsafe_allow_html=True)
 
-    # Content for the second column
     with col2:
         st.subheader('📊 Model and Series Analysis')
         st.write(
@@ -96,10 +85,8 @@ def home():
             """
         )
 
-    # Add vertical space between columns
     st.write("<div style='height: 50px;'></div>", unsafe_allow_html=True)
 
-    # Content for the third column
     with col3:
         st.subheader('📉 Brand Breakdown')
         st.write(
@@ -118,26 +105,21 @@ def home():
             """
         )
     
-# Sidebar
 st.sidebar.title('WELCOME TO WORLD OF CARS')
 
-# Option selection from the sidebar
 option = st.sidebar.selectbox(
     'CHOOSE FROM BELOW',
     ['Home', 'Search by Brand', 'Search by Category', 'EDA','DATASET','ABOUT ME']
 )
 
-# Function to handle "Search by Brand"
 def search_by_brand(brand,model):
     st.title('Search by Brand')
 
 
-# Load custom fonts (Montserrat and Roboto) from Google Fonts
     st.markdown("""
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
     """, unsafe_allow_html=True)
 
-    # Create two responsive columns
     c1, c2 = st.columns(2)
 
     # import requests
@@ -2658,7 +2640,7 @@ def search_by_category(final_df):
 
 
     def all_cartograpic(df):
-        pass
+        st.write('coming soon')
 
 
     selected_visualization = st.selectbox('CHOOSE TYPE OF VISUALIZATION',['BAR CHARTS','LINE CHARTS','HISTOGRAMS','PIE CHARTS','TREE MAP','SUNBRUST CHARTS','BOX PLOTS','CARTOGRAPIC MAP','HEAT MAP'])
@@ -3246,6 +3228,8 @@ if option == 'Home':
 
 elif option == 'Search by Brand':
     st.empty()
+    st.warning('The YouTube and Image APIs will not function once the website is live, as Google charges per request, and my free trial period has ended.')
+    st.write("If you'd like to see the dynamic updates of videos and images in action, you can visit the website's demo on my LinkedIn profile: [Akshat Sharma](https://www.linkedin.com/in/akshat-sharma-89635631b/).")
     brand = st.sidebar.selectbox('BRAND',sorted(df['BRAND'].unique()))
     print(brand,'*'*100)
     model_list = df[df['BRAND'] == brand]['MODEL/CLASS'].unique()
@@ -3255,6 +3239,8 @@ elif option == 'Search by Brand':
 
 elif option == 'Search by Category':
 
+    st.warning('The YouTube and Image APIs will not function once the website is live, as Google charges per request, and my free trial period has ended.')
+    st.write("If you'd like to see the dynamic updates of videos and images in action, you can visit the website's demo on my LinkedIn profile: [Akshat Sharma](https://www.linkedin.com/in/akshat-sharma-89635631b/).")
     category = st.sidebar.selectbox('CATEGORY',sorted(df['CAR TYPE'].unique()))
     price_set = df[df['CAR TYPE'] == category]['PRICE($)']
     lower_limit = st.sidebar.slider('SET LOWER LIMIT ON PRICE',round(price_set.min()),round(price_set.max()))
