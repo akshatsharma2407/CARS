@@ -140,27 +140,29 @@ def search_by_brand(brand,model):
     # Create two responsive columns
     c1, c2 = st.columns(2)
 
-    import requests
+    # import requests
 
-    def get_youtube_videos(car_name):
-        api_key = 'AIzaSyCRmnPMnqiT1NMM7pTlZBeEp2ildwe5_rw'  
-        url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&q={car_name}&type=video&key={api_key}'
-        response = requests.get(url)
-        data = response.json()
+    # def get_youtube_videos(car_name):
+    #     api_key = ''  
+    #     url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&q={car_name}&type=video&key={api_key}'
+    #     response = requests.get(url)
+    #     data = response.json()
         
-        if 'items' not in data:
-            print("Error:", data)
-            return []
+    #     if 'items' not in data:
+    #         print("Error:", data)
+    #         return []
 
-        video_ids = [item['id']['videoId'] for item in data['items']]
-        video_urls = [f"https://www.youtube.com/watch?v={video_id}" for video_id in video_ids]
-        return video_urls
+    #     video_ids = [item['id']['videoId'] for item in data['items']]
+    #     video_urls = [f"https://www.youtube.com/watch?v={video_id}" for video_id in video_ids]
+    #     return video_urls
 
-    videos = get_youtube_videos(f"{brand} {model} official video")
-    video = videos[0]
-    youtube_video_id = video.split('v=')[-1]
-    print(video)
-    print(youtube_video_id)
+    # videos = get_youtube_videos(f"{brand} {model} official video")
+    # video = videos[0]
+    # youtube_video_id = video.split('v=')[-1]
+    # print(video)
+    # print(youtube_video_id)
+
+    youtube_video_id = 'ItreON4lIW8'
 
     with c1: 
         autoplay_html = f"""
@@ -470,19 +472,21 @@ def search_by_brand(brand,model):
 
     st.write('\n'*50)
     st.write('-'*50)
-    import requests
-    import random 
+    # import requests
+    # import random 
 
-    def get_google_images(car_name):
-        url = f"https://www.googleapis.com/customsearch/v1?q={car_name}&cx={'a1b7ef8be3781450e'}&searchType=image&key={'AIzaSyCRmnPMnqiT1NMM7pTlZBeEp2ildwe5_rw'}"
-        response = requests.get(url)
-        data = response.json()
-        return [item['link'] for item in data.get('items', [])]
+    # def get_google_images(car_name):
+    #     url = f"https://www.googleapis.com/customsearch/v1?q={car_name}&cx={''}&searchType=image&key={''}"
+    #     response = requests.get(url)
+    #     data = response.json()
+    #     return [item['link'] for item in data.get('items', [])]
 
-    photos = get_google_images(f'{brand} {model}')
-    random.shuffle(photos)
+    # photos = get_google_images(f'{brand} {model}')
+    # random.shuffle(photos)
+    
+    photos = 'https://www.mansory.com/sites/default/files/styles/1920x800_fullwidth_car_slider/public/migrated/cars/Cars/rolls-royce/wraith/mansory_rolls_royce_wraith_25.jpg?itok=f5CcTOPO'
 
-    st.image(photos[0],f'{model}-image from google api')
+    st.image(photos,f'{model}-image from google api')
     st.write('Photo Not Relevent? Refresh the Page')
 
     st.write('-'*50)
@@ -1819,27 +1823,30 @@ def search_by_category(final_df):
 
     # Create two responsive columns
     c1, c2 = st.columns(2)
-    import requests
-    def get_youtube_videos(car_name):
-        api_key = 'AIzaSyCRmnPMnqiT1NMM7pTlZBeEp2ildwe5_rw'  
-        url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&q={car_name}&type=video&key={api_key}'
-        response = requests.get(url)
-        data = response.json()
-        
-        if 'items' not in data:
-            print("Error:", data)
-            return []
-
-        video_ids = [item['id']['videoId'] for item in data['items']]
-        video_urls = [f"https://www.youtube.com/watch?v={video_id}" for video_id in video_ids]
-        return video_urls
     
-    fatch = final_df['CAR NAME'].values[0]
-    videos = get_youtube_videos(f'{fatch} official video')
-    video = videos[0]
-    youtube_video_id = video.split('v=')[-1]
+    # import requests
+    # def get_youtube_videos(car_name):
+    #     api_key = ''  
+    #     url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&q={car_name}&type=video&key={api_key}'
+    #     response = requests.get(url)
+    #     data = response.json()
+        
+    #     if 'items' not in data:
+    #         print("Error:", data)
+    #         return []
+
+    #     video_ids = [item['id']['videoId'] for item in data['items']]
+    #     video_urls = [f"https://www.youtube.com/watch?v={video_id}" for video_id in video_ids]
+    #     return video_urls
+    
+    # fatch = final_df['CAR NAME'].values[0]
+    # videos = get_youtube_videos(f'{fatch} official video')
+    # video = videos[0]
+    # youtube_video_id = video.split('v=')[-1]
     # print(video)
     # print(youtube_video_id)
+    
+    youtube_video_id = 'pk5QL_kKN_g'
 
     with c1:
         autoplay_html = f"""
@@ -2057,19 +2064,19 @@ def search_by_category(final_df):
     st.write('\n'*50)
     st.write('-'*50)
 
-    import requests
-    import random 
+    # import requests
+    # import random 
+    # def get_google_images(car_name):
+    #     url = f"https://www.googleapis.com/customsearch/v1?q={car_name}&cx={''}&searchType=image&key={''}"
+    #     response = requests.get(url)
+    #     data = response.json()
+    #     return [item['link'] for item in data.get('items', [])]
 
-    def get_google_images(car_name):
-        url = f"https://www.googleapis.com/customsearch/v1?q={car_name}&cx={'a1b7ef8be3781450e'}&searchType=image&key={'AIzaSyCRmnPMnqiT1NMM7pTlZBeEp2ildwe5_rw'}"
-        response = requests.get(url)
-        data = response.json()
-        return [item['link'] for item in data.get('items', [])]
+    # photos = get_google_images(car)
+    # random.shuffle(photos)
+    photos = 'https://www.ilusso.com/wp-content/uploads/Blog-Image-01-14.png'
 
-    photos = get_google_images(car)
-    random.shuffle(photos)
-
-    st.image(photos[0],f'{car}-image from google api')
+    st.image(photos,f'{car}-image from google api')
 
     st.write('-'*50)
     
